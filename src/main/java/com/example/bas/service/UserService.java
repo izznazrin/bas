@@ -26,10 +26,6 @@ public class UserService {
         userList.addAll(Arrays.asList(user1, user2, user3, user4, user5));
     }
 
-    // public User getUser(Integer id) {
-    //     return null;
-    // }
-
     public Optional<User> getUser(Integer id) {
         Optional<User> optional = Optional.empty();
         for (User user : userList) {
