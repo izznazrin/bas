@@ -3,7 +3,7 @@ package com.example.bas.api.controller;
 import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.bas.api.model.User;
@@ -18,8 +18,8 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/user")
-    public User getUser(@RequestParam Integer id) {
+    @GetMapping("/user/{id}")
+    public User getUser(@PathVariable Integer id) {
         Optional<User> user = userService.getUser(id);
         if(user.isPresent()){
             return (User) user.get();
